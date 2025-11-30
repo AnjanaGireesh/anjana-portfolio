@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Anjana G — M.Tech CSE | ML & Web Dev</title>
+  <meta name="description" content="Portfolio of Anjana G — M.Tech CSE student. Projects in ML, systems programming, web development, and data visualization.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#0f1724; --card:#0b1220; --muted:#94a3b8; --accent:#7c3aed; --glass: rgba(255,255,255,0.04);
+      color-scheme: dark;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e6eef8;background:linear-gradient(180deg,#061028 0%, #081226 60%);}
+    header{position:sticky;top:0;background:linear-gradient(180deg, rgba(6,9,20,0.6), rgba(6,9,20,0.3));backdrop-filter:blur(6px);z-index:50;border-bottom:1px solid rgba(255,255,255,0.03)}
+    .container{max-width:1100px;margin:0 auto;padding:28px}
+    nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:48px;height:48px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#4c1d95);display:flex;align-items:center;justify-content:center;font-weight:700;color:white}
+    .nav-links{display:flex;gap:14px}
+    .nav-links a{color:var(--muted);text-decoration:none;font-weight:600}
+    .hero{display:grid;grid-template-columns:1fr 360px;gap:28px;align-items:center;padding:36px 0}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:12px;padding:22px;border:1px solid rgba(255,255,255,0.03)}
+    h1{margin:0;font-size:28px}
+    h2{margin:4px 0 12px;color:#cfe3ff;font-weight:600}
+    p.lead{color:var(--muted);line-height:1.5}
+    .skills{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{padding:6px 10px;border-radius:999px;background:var(--glass);font-size:13px;color:var(--muted);border:1px solid rgba(255,255,255,0.02)}
+    .contact-btn{display:inline-block;padding:10px 14px;border-radius:10px;background:linear-gradient(90deg,var(--accent),#5b21b6);color:white;text-decoration:none;font-weight:700}
+    .sidebar .info-row{display:flex;gap:10px;align-items:center;margin-bottom:12px}
+    .meta{font-size:13px;color:var(--muted)}
+    .section{margin-top:22px}
+    .two-col{display:grid;grid-template-columns:1fr 360px;gap:22px}
+    ul.clean{list-style:none;padding:0;margin:0}
+    .project{padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent);}
+    footer{padding:28px 0;color:var(--muted);text-align:center;font-size:14px}
+    @media(max-width:900px){
+      .hero,.two-col{grid-template-columns:1fr}
+      .nav-links{display:none}
+      .logo{width:40px;height:40px}
+    }
+    /* small interactions */
+    .project:hover{transform:translateY(-6px);transition:all 180ms ease}
+    a.social{color:var(--muted);text-decoration:none;font-weight:600}
+    .edu-item{margin-bottom:10px}
+    .cv-link{font-size:14px;color:var(--muted);text-decoration:none}
+    .chip{display:inline-block;padding:6px 10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);font-weight:600}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">
+          <div class="logo">AG</div>
+          <div>
+            <div style="font-weight:800">Anjana G</div>
+            <div style="font-size:13px;color:var(--muted)">M.Tech CSE Student • ML & Web Dev</div>
+          </div>
+        </div>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#education">Education</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="card">
+        <h1>Hi, I'm Anjana — <span style="color:var(--accent)">ML & Systems-focused Developer</span></h1>
+        <h2>Final-year M.Tech Computer Science student passionate about machine learning, data analytics and systems programming.</h2>
+        <p class="lead">I build practical systems and research-driven projects: OS simulators, real-time apps, ML models and data visualizations. I enjoy converting theory into working software and clear visual explanations.</p>
+
+        <div class="section">
+          <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap">
+            <a class="contact-btn" href="mailto:ganjana369@gmail.com">Email me</a>
+            <a class="cv-link" href="Anjana-G.pdf" download>Download Resume</a>
+          </div>
+        </div>
+
+        <div class="section">
+          <div style="font-weight:700;margin-bottom:8px">Core Competencies</div>
+          <div class="skills">
+            <span class="tag">Python</span>
+            <span class="tag">C++</span>
+            <span class="tag">Machine Learning</span>
+            <span class="tag">NLP</span>
+            <span class="tag">Data Visualization</span>
+            <span class="tag">SQL / MySQL</span>
+            <span class="tag">Tableau</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card sidebar">
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div class="info-row"><div class="chip">Location</div><div class="meta">Thrissur, Kerala, India</div></div>
+          <div class="info-row"><div class="chip">Email</div><div class="meta">ganjana369@gmail.com</div></div>
+          <div class="info-row"><div class="chip">LinkedIn</div><div class="meta"><a class="social" href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">linkedin.com/in/anjana-g-1048551b8</a></div></div>
+          <div style="margin-top:12px"><strong style="display:block;margin-bottom:6px">Languages</strong><div class="meta">Malayalam (Native) • English (Professional)</div></div>
+
+          <div class="section">
+            <strong style="display:block;margin-bottom:8px">Quick Facts</strong>
+            <div class="meta">AI/ML Intern — Core Cognitics • App Dev Intern — Torc Infotech</div>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="projects" class="section">
+      <h2 style="margin-bottom:12px">Featured Projects</h2>
+      <div class="two-col">
+        <div>
+          <div class="project">
+            <h3>WebSocket Real-Time Chat Application</h3>
+            <p class="meta">Real-time multi-user chat system built with Python and WebSockets; responsive frontend with HTML/CSS/JS.</p>
+            <p>Implementations: server using WebSockets, client with reconnection logic, message history and basic user presence.</p>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="project">
+            <h3>Linux Kernel Process Scheduler Visualizer</h3>
+            <p class="meta">Simulator for Round Robin and Completely Fair Scheduler algorithms implemented in Python with matplotlib visualizations and metrics.</p>
+            <p>Included features: per-process metrics, interactive Gantt-style charts, and CSV export.</p>
+          </div>
+        </div>
+
+        <aside>
+          <div class="card">
+            <h4>Research</h4>
+            <p class="meta">"Enhancing Driver Safety: Deep Learning Approach for Drowsiness Detection and Accident Prevention" — applied computer vision and deep learning for real-time drowsiness detection.</p>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="card">
+            <h4>Certifications</h4>
+            <ul class="clean meta">
+              <li>Foundation of Cloud IoT Edge ML — NPTEL (IIT Kanpur)</li>
+              <li>Data Analytics: Turning Data into Decisions — IBM</li>
+              <li>Deloitte Australia — Data Analytics Simulation</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <h2 style="margin-bottom:12px">Experience</h2>
+      <div class="card">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap">
+          <div>
+            <strong>AI / ML Intern — Core Cognitics</strong>
+            <div class="meta">May 2025 — July 2025 • Kozhikode, Kerala</div>
+            <p class="meta">Built an AI chatbot (Python + SQL) for store sales queries and analytics; used MySQL, data visualization, and NLP to improve query understanding.</p>
+          </div>
+
+          <div>
+            <strong>App Developer Intern — Torc Infotech</strong>
+            <div class="meta">May 2023 — June 2023 • Kochi, Kerala</div>
+            <p class="meta">Contributed to mobile application development across full lifecycle; worked with cross-functional teams on UI/UX and deployment.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 style="margin-bottom:12px">Education</h2>
+      <div class="card">
+        <div class="edu-item">
+          <strong>Master of Technology (M.Tech) — Computer Science and Engineering</strong>
+          <div class="meta">NSS College of Engineering, Palakkad • Sep 2024 — Mar 2026 (expected)</div>
+        </div>
+        <div class="edu-item">
+          <strong>Bachelor of Technology (B.Tech) — Computer Science</strong>
+          <div class="meta">Jawaharlal College of Engineering & Technology, Mangalam • 2020 — 2024</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2 style="margin-bottom:12px">Contact</h2>
+      <div class="card">
+        <p class="meta">I'm open to collaborations, internships and research opportunities. Email me directly or connect on LinkedIn.</p>
+        <p style="margin-top:12px"><a class="contact-btn" href="mailto:ganjana369@gmail.com">Email: ganjana369@gmail.com</a></p>
+        <p style="margin-top:10px;color:var(--muted)">LinkedIn — <a class="social" href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">Made with ♥ — Anjana G • <span style="color:var(--muted)">Built as a lightweight single-file portfolio</span></div>
+  </footer>
+
+  <script>
+    // small enhancement: smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click',e=>{e.preventDefault();document.querySelector(a.getAttribute('href')).scrollIntoView({behavior:'smooth',block:'start'})})
+    });
+  </script>
+</body>
+</html>
