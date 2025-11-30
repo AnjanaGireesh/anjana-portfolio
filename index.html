@@ -2,288 +2,180 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Anjana G — Portfolio</title>
-
-  <!-- Fonts & Icons -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
-
-  <!-- Lottie -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
-
-  <!-- Main styles -->
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Anjana G — Portfolio </title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    body { margin:0; font-family:Inter, sans-serif; background:#0d1117; color:#e6edf3; }
+    .container { max-width: 1050px; margin:auto; padding:40px 20px; }
+    h1,h2,h3 { color:#fff; }
+    .section { margin-bottom:40px; }
+    .card { background:#161b22; padding:25px; border-radius:12px; margin-bottom:20px; }
+    a { color:#58a6ff; text-decoration:none; }
+    .timeline { border-left:3px solid #7c3aed; padding-left:20px; }
+    .timeline-item { margin-bottom:18px; }
+    .timeline-item::before{content:"";width:12px;height:12px;background:#7c3aed;border-radius:50%;position:relative;left:-28px;top:4px;display:block;}
+    ul { padding-left:20px; }
+  </style>
 </head>
 <body>
-  <!-- Particle canvas -->
-  <canvas id="particle-canvas" aria-hidden="true"></canvas>
+<div class="container">
 
-  <!-- NAV -->
-  <nav class="nav">
-    <div class="nav-left">
-      <div class="logo">AG</div>
-      <div class="brand-text">
-        <div class="name">Anjana G</div>
-        <div class="sub">M.Tech CSE • ML • Data Analytics</div>
+  <header class="section">
+    <h1>Anjana G</h1>
+    <p>M.Tech CSE Student at NSSCE | Passionate About Machine Learning, Data Analytics, Systems Programming & Web Development</p>
+    <p><strong>Email:</strong> <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a></p>
+    <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">linkedin.com/in/anjana-g-1048551b8</a></p>
+  </header>
+
+  <section class="section">
+    <h2>About Me</h2>
+    <div class="card">
+      <p>I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions.</p>
+      <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with algorithms and complex problem-solving tasks.</p>
+      <p>I am particularly motivated to deepen my knowledge in low-level programming and contribute meaningfully to system-level software development.</p>
+      <p>Beyond technical skills, I bring strong communication abilities, teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation.</p>
+      <p><strong>Location:</strong> Thrissur, Kerala, India</p>
+      <p><strong>Languages:</strong> Malayalam (Native), English (Professional)</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Core Competencies & Skills</h2>
+    <div class="card">
+      <h3>Core Skills</h3>
+      <ul>
+        <li><strong>Data Analysis:</strong> Analyzing complex datasets, extracting insights, turning data into decisions.</li>
+        <li><strong>Tableau:</strong> Creating interactive dashboards and data visualizations.</li>
+        <li><strong>Natural Language Processing:</strong> Building intelligent chatbots and NLP systems.</li>
+      </ul>
+
+      <h3>Technical Expertise</h3>
+      <ul>
+        <li>C++</li>
+        <li>Python</li>
+        <li>Java</li>
+        <li>SQL/MySQL</li>
+      </ul>
+
+      <h3>Soft Skills</h3>
+      <ul>
+        <li>Problem Solving</li>
+        <li>Communication</li>
+        <li>Team Collaboration</li>
+        <li>Project Management</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2>Education Journey</h2>
+    <div class="card timeline">
+      <div class="timeline-item">
+        <h3>M.Tech – Computer Science and Engineering</h3>
+        <p>NSS College of Engineering, Palakkad (2024 – 2026)</p>
+      </div>
+      <div class="timeline-item">
+        <h3>B.Tech – Computer Science</h3>
+        <p>Jawaharlal College of Engineering & Technology (2020 – 2024)</p>
+      </div>
+      <div class="timeline-item">
+        <h3>Plus Two – Computer Science</h3>
+        <p>Little Flower Girls Higher Secondary School Chelakkara (2020)</p>
+      </div>
+      <div class="timeline-item">
+        <h3>ICSE 10th</h3>
+        <p>Seventh Day Adventist Higher Secondary School (2018)</p>
       </div>
     </div>
-    <div class="nav-right">
-      <a href="#hero" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#education" class="nav-link">Education</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
+  </section>
+
+  <section class="section">
+    <h2>Professional Experience</h2>
+    <div class="card">
+      <h3>AI / ML Intern — Core Cognitics</h3>
+      <p><strong>May 2025 – July 2025 | Kozhikode, Kerala</strong></p>
+      <p>Built an AI chatbot using Python and SQL for managing store sales queries and analytics. Worked with MySQL, data visualization tools, and NLP to improve user interaction and query understanding.</p>
     </div>
-  </nav>
 
-  <main class="container">
+    <div class="card">
+      <h3>App Developer Intern — Torc Infotech</h3>
+      <p><strong>May 2023 – June 2023 | Kochi, Kerala</strong></p>
+      <p>Worked on mobile application development, UI/UX design, and deployment. Gained experience in agile workflow and full app development lifecycle.</p>
+    </div>
+  </section>
 
-    <!-- HERO -->
-    <section id="hero" class="hero">
-      <div class="hero-left">
-       <div class="avatar">
-  <i class="ri-user-3-fill"></i>
-</div>
-        <div class="card contact-card">
-          <div class="sec-title"><i class="ri-mail-line"></i><span>Contact Me</span></div>
-          <p class="muted">Email: <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a></p>
-          <p class="muted">LinkedIn: <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
-          <div class="meta-row">
-            <div><strong>Location</strong><div class="muted">Thrissur, Kerala, India</div></div>
-            <div><strong>Languages</strong><div class="muted">Malayalam (Native), English (Professional)</div></div>
-          </div>
-        </div>
-      </div>
+  <section class="section">
+    <h2>Featured Projects</h2>
+    <div class="card">
+      <h3>WebSocket Real-Time Chat Application</h3>
+      <p>Developed a sophisticated multi-user chat system using Python and WebSockets. Built a responsive frontend using HTML, CSS, and JavaScript, ensuring seamless real-time communication.</p>
+    </div>
 
-      <div class="hero-right">
-        <h1>Hi, I'm <span class="accent">Anjana G</span></h1>
-        <p class="lead muted">M.Tech CSE Student at NSSCE | Passionate About Machine Learning, Data Analytics & Web Development | Python Enthusiast</p>
+    <div class="card">
+      <h3>Linux Kernel Process Scheduler Visualizer</h3>
+      <p>Created an advanced scheduler simulator implementing RR and CFS algorithms using Python. Built interactive visualizations with matplotlib and pandas.</p>
+      <p>Demonstrated strong OS concepts and system analysis skills.</p>
+    </div>
+  </section>
 
-        <div id="lottie-hero" class="lottie-hero" aria-hidden="true"></div>
-
-        <!-- about excerpt -->
-        <div class="card">
-          <p>I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions.</p>
-          <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with core algorithms and complex problem-solving tasks.</p>
-          <p class="muted">Beyond technical skills, I bring strong communication abilities, collaborative teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation.</p>
-
-          <div class="hero-ctas">
-            <a class="cta" href="mailto:ganjana369@gmail.com"><i class="ri-mail-open-fill"></i> Email Me</a>
-            <a class="muted" id="open-resume" href="Anjana-G.pdf" download style="margin-left:12px">Download Resume</a>
-            <button class="cta ghost" id="open-full-about" style="margin-left:12px"><i class="ri-file-list-3-line"></i> Read Full</button>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="card section">
-      <div class="sec-title"><i class="ri-stack-line"></i><h2>Core Competencies & Skills</h2></div>
-
-      <h3>Data Analysis</h3>
-      <p class="muted">Expert in analyzing complex datasets, extracting meaningful insights, and turning data into actionable decisions using Python and visualization tools.</p>
-
-      <h3>Tableau</h3>
-      <p class="muted">Proficient in creating interactive dashboards and compelling data visualizations that communicate insights effectively to stakeholders.</p>
-
-      <h3>Natural Language Processing</h3>
-      <p class="muted">Experienced in NLP techniques and building intelligent chatbots that understand and respond to human language naturally.</p>
-
-      <div class="chips">
-        <span class="chip">C++</span>
-        <span class="chip">Python</span>
-        <span class="chip">Java</span>
-        <span class="chip">SQL / MySQL</span>
-        <span class="chip">Problem Solving</span>
-        <span class="chip">Communication</span>
-        <span class="chip">Team Collaboration</span>
-        <span class="chip">Project Management</span>
-      </div>
-
-      <!-- skill bars -->
-      <div class="skillbars">
-        <div class="skillbar"><div class="label"><span>Python</span><span>95%</span></div><div class="bar"><div class="fill" data-fill="95%"></div></div></div>
-        <div class="skillbar"><div class="label"><span>C++</span><span>90%</span></div><div class="bar"><div class="fill" data-fill="90%"></div></div></div>
-        <div class="skillbar"><div class="label"><span>SQL</span><span>85%</span></div><div class="bar"><div class="fill" data-fill="85%"></div></div></div>
-        <div class="skillbar"><div class="label"><span>Machine Learning</span><span>80%</span></div><div class="bar"><div class="fill" data-fill="80%"></div></div></div>
-      </div>
-    </section>
-
-    <!-- EDUCATION (modal triggers for long content) -->
-    <section id="education" class="card section">
-      <div class="sec-title"><i class="ri-book-open-line"></i><h2>Education Journey</h2></div>
-      <div class="timeline">
-        <div class="item"><h3>Master of Technology - MTech</h3><p class="muted">NSS College of Engineering, Palakkad — Computer Science and Engineering — September 2024 - March 2026</p></div>
-        <div class="item"><h3>Bachelor of Technology - BTech</h3><p class="muted">Jawaharlal College of Engineering & Technology, Mangalam — Computer Science — 2020 - 2024</p></div>
-        <div class="item"><h3>Plus Two</h3><p class="muted">Little Flower Girls Higher Secondary School Chelakkara — Computer Science — March 2020</p></div>
-        <div class="item"><h3>ICSE Tenth</h3><p class="muted">Seventh Day Adventist Higher Secondary School — 2018</p></div>
-      </div>
-      <div style="margin-top:12px"><button class="cta ghost" data-modal="modal-education">View Details</button></div>
-    </section>
-
-    <!-- EXPERIENCE -->
-    <section id="experience" class="card section">
-      <div class="sec-title"><i class="ri-briefcase-line"></i><h2>Professional Experience</h2></div>
-
-      <div class="exp-item">
-        <h3>AI / ML Intern</h3>
-        <p class="muted"><strong>Core Cognitics | Kozhikode, Kerala, India</strong> — May 2025 - July 2025 (3 months)</p>
-        <p>Built an AI chatbot using Python and SQL for managing store sales queries and analytics. Utilized MySQL for database management and implemented data visualization tools to generate actionable insights for decision-making. Developed natural language processing capabilities to enhance user interaction and query understanding.</p>
-      </div>
-
-      <div class="exp-item">
-        <h3>App Developer Intern</h3>
-        <p class="muted"><strong>Torc Infotech | Kochi, Kerala</strong> — May 2023 - June 2023 (2 months)</p>
-        <p>Gained hands-on experience in mobile application development, working with cross-functional teams to design and implement user-friendly interfaces. Contributed to the development lifecycle from concept to deployment, learning industry best practices and agile methodologies.</p>
-      </div>
-
-      <div style="margin-top:12px"><button class="cta ghost" data-modal="modal-experience">Read More</button></div>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="card section">
-      <div class="sec-title"><i class="ri-projector-2-line"></i><h2>Featured Projects</h2></div>
-
-      <div class="projects-grid">
-        <div class="project-card">
-          <h3>WebSocket Real-Time Chat Application</h3>
-          <p class="muted">Developed a sophisticated multi-user chat system using Python and WebSockets to enable seamless real-time client-server communication. Designed and implemented an intuitive frontend interface using HTML, CSS, and JavaScript, ensuring responsive design and excellent user experience across devices.</p>
-          <button class="cta ghost" data-modal="modal-projects">Details</button>
-        </div>
-
-        <div class="project-card">
-          <h3>Linux Kernel Process Scheduler Visualizer</h3>
-          <p class="muted">Created an advanced scheduler simulator implementing Round Robin and Completely Fair Scheduler algorithms using Python. Developed interactive visualizations using matplotlib and pandas to analyze CPU scheduling behavior, providing deep insights into process management and system performance optimization.</p>
-          <button class="cta ghost" data-modal="modal-projects">Details</button>
-        </div>
-      </div>
-    </section>
-
-    <!-- CERTIFICATIONS + WORKSHOPS -->
-    <section id="certifications" class="card section">
-      <div class="sec-title"><i class="ri-award-line"></i><h2>Certifications & Professional Development</h2></div>
-      <ul class="muted">
+  <section class="section">
+    <h2>Certifications & Professional Development</h2>
+    <div class="card">
+      <ul>
         <li>Foundation of Cloud IoT Edge ML — NPTEL IIT Kanpur</li>
         <li>Data Fundamentals</li>
-        <li>Deloitte Australia - Data Analytics Job Simulation</li>
-        <li>Data Analytics: Turning Data into Decisions — IBM</li>
+        <li>Deloitte Australia — Data Analytics Job Simulation</li>
+        <li>IBM — Data Analytics: Turning Data into Decisions</li>
       </ul>
 
       <h3>Workshops Attended</h3>
-      <ul class="muted">
-        <li>Hands-on Workshop on Power BI — NSSCE, Palakkad</li>
-        <li>Python and Computer Vision Bootcamp — DevTown</li>
-        <li>Process of Writing Quality Research Paper — NSSCE, Palakkad</li>
+      <ul>
+        <li>Hands-on Workshop on Power BI — NSSCE</li>
+        <li>Python & Computer Vision Bootcamp — DevTown</li>
+        <li>Process of Writing Quality Research Paper — NSSCE</li>
       </ul>
 
       <h3>Competitions</h3>
-      <ul class="muted">
+      <ul>
         <li>Tata Crucible Campus Quiz 2025</li>
       </ul>
-    </section>
+    </div>
+  </section>
 
-    <!-- RESEARCH -->
-    <section id="research" class="card section">
-      <div class="sec-title"><i class="ri-git-branch-line"></i><h2>Research & Publications</h2></div>
+  <section class="section">
+    <h2>Research & Publications</h2>
+    <div class="card">
       <h3>Enhancing Driver Safety: Deep Learning Approach for Drowsiness Detection and Accident Prevention</h3>
-      <p class="muted">This research explores the application of deep learning techniques to detect driver drowsiness in real-time, potentially preventing accidents and saving lives. The study combines computer vision, machine learning algorithms, and practical implementation strategies to create an effective safety system.</p>
+      <p>This research explores the use of deep learning to detect driver drowsiness in real-time. The system monitors indicators such as eye closure patterns, head position, and facial expressions to prevent accidents.</p>
+      <p>The work demonstrates expertise in computer vision, neural networks, and implementing AI systems in safety-critical environments.</p>
+    </div>
+  </section>
 
-      <p class="muted">The research addresses a critical public safety concern by developing intelligent systems that can monitor driver alertness and provide timely warnings. By leveraging advanced neural networks and image processing techniques, the system achieves high accuracy in detecting signs of drowsiness such as eye closure patterns, head position, and facial expressions.</p>
-    </section>
+  <section class="section">
+    <h2>Webinars, Events & Community Engagement</h2>
+    <div class="card">
+      <h3>Python and Computer Vision Bootcamp — DevTown</h3>
+      <p>Intensive training on OpenCV, deep learning, and advanced Python concepts.</p>
 
-    <!-- EVENTS -->
-    <section id="events" class="card section">
-      <div class="sec-title"><i class="ri-calendar-line"></i><h2>Webinars, Events & Community Engagement</h2></div>
+      <h3>Process of Writing Quality Research Paper — NSSCE</h3>
+      <p>Comprehensive training on research methodology, academic writing, and publication standards.</p>
 
-      <div class="muted">
-        <h3>Python and Computer Vision Bootcamp — DevTown</h3>
-        <p>Intensive training program covering advanced Python programming techniques and computer vision applications using OpenCV and deep learning frameworks.</p>
+      <h3>NSS Volunteer Activities</h3>
+      <p>Active participation in NSS programs, community service, and outreach, demonstrating leadership and social responsibility.</p>
+    </div>
+  </section>
 
-        <h3>Process of Writing Quality Research Paper — NSSCE</h3>
-        <p>Comprehensive seminar on academic writing, research methodology, and publication strategies for technical papers.</p>
-
-        <h3>NSS Volunteer Activities</h3>
-        <p>Active participation in NSS programs, community service, and outreach, demonstrating strong teamwork, leadership, and social commitment.</p>
-      </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="card section">
-      <div class="sec-title"><i class="ri-contacts-line"></i><h2>Let's Connect</h2></div>
-      <p class="muted">Ready to collaborate — actively seeking opportunities to apply skills in machine learning, data analytics, and systems programming.</p>
+  <section class="section">
+    <h2>Let's Connect</h2>
+    <div class="card">
+      <p>I’m actively seeking opportunities to apply my skills in machine learning, data analytics, and systems programming to real-world problems.</p>
+      <p>I bring strong technical skills, communication, collaboration, and continuous learning attitude.</p>
       <p><strong>Email:</strong> <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a></p>
-      <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
-    </section>
-
-    <footer class="footer muted">© 2025 Anjana G — Portfolio Website • Built from original PDF content</footer>
-  </main>
-
-  <!-- MODALS (HYBRID) -->
-  <div id="modal-root">
-    <div id="modal-full-about" class="modal">
-      <div class="modal-card">
-        <button class="modal-close" data-close>&times;</button>
-        <h2>About — Full</h2>
-        <div class="modal-body">
-          <!-- Full PDF content for About (all paragraphs) -->
-          <p>I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions that make a difference.</p>
-          <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with core algorithms and complex problem-solving tasks. I'm particularly motivated to deepen my knowledge in low-level programming and contribute meaningfully to system-level software development.</p>
-          <p>Beyond technical skills, I bring strong communication abilities, collaborative teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation. I'm actively seeking opportunities to apply my skills in challenging environments where I can continue learning and growing as a developer.</p>
-          <p><strong>Location:</strong> Thrissur, Kerala, India</p>
-          <p><strong>Languages:</strong> Malayalam (Native), English (Professional)</p>
-        </div>
-      </div>
+      <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">Visit Profile</a></p>
     </div>
+  </section>
 
-    <div id="modal-education" class="modal">
-      <div class="modal-card">
-        <button class="modal-close" data-close>&times;</button>
-        <h2>Education — Details</h2>
-        <div class="modal-body">
-          <ul>
-            <li><strong>Master of Technology - MTech</strong> — NSS College of Engineering, Palakkad — Computer Science and Engineering — September 2024 - March 2026</li>
-            <li><strong>Bachelor of Technology - BTech</strong> — Jawaharlal College of Engineering & Technology, Mangalam — Computer Science — 2020 - 2024</li>
-            <li><strong>Plus Two</strong> — Little Flower Girls Higher Secondary School Chelakkara — Computer Science — March 2020</li>
-            <li><strong>ICSE Tenth</strong> — Seventh Day Adventist Higher Secondary School — 2018</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div id="modal-experience" class="modal">
-      <div class="modal-card">
-        <button class="modal-close" data-close>&times;</button>
-        <h2>Experience — Details</h2>
-        <div class="modal-body">
-          <h3>AI / ML Intern — Core Cognitics</h3>
-          <p><strong>May 2025 - July 2025 • Kozhikode, Kerala</strong></p>
-          <p>Built an AI chatbot using Python and SQL for managing store sales queries and analytics. Utilized MySQL for database management and implemented data visualization tools to generate actionable insights for decision-making. Developed natural language processing capabilities to enhance user interaction and query understanding.</p>
-
-          <h3>App Developer Intern — Torc Infotech</h3>
-          <p><strong>May 2023 - June 2023 • Kochi, Kerala</strong></p>
-          <p>Gained hands-on experience in mobile application development, working with cross-functional teams to design and implement user-friendly interfaces. Contributed to the development lifecycle from concept to deployment, learning industry best practices and agile methodologies.</p>
-        </div>
-      </div>
-    </div>
-
-    <div id="modal-projects" class="modal">
-      <div class="modal-card">
-        <button class="modal-close" data-close>&times;</button>
-        <h2>Projects — Details</h2>
-        <div class="modal-body">
-          <h3>WebSocket Real-Time Chat Application</h3>
-          <p>Developed a sophisticated multi-user chat system using Python and WebSockets to enable seamless real-time client-server communication. Designed and implemented an intuitive frontend interface using HTML, CSS, and JavaScript, ensuring responsive design and excellent user experience across devices.</p>
-
-          <h3>Linux Kernel Process Scheduler Visualizer</h3>
-          <p>Created an advanced scheduler simulator implementing Round Robin and Completely Fair Scheduler algorithms using Python. Developed interactive visualizations using matplotlib and pandas to analyze CPU scheduling behavior, providing deep insights into process management and system performance optimization.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Scripts -->
-  <script src="script.js"></script>
+</div>
 </body>
 </html>
