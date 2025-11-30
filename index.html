@@ -2,186 +2,106 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Anjana G — Portfolio</title>
 
-  <!-- Fonts -->
+  <!-- Fonts & Icons -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Remix icons CDN for icons -->
   <link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
 
   <!-- Lottie -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.9.6/lottie.min.js"></script>
 
-  <style>
-    :root{
-      --bg1: #0f0c29;
-      --bg2: #302b63;
-      --bg3: #24243e;
-      --accent: linear-gradient(90deg,#7c3aed,#4c1d95);
-      --glass: rgba(255,255,255,0.06);
-      --muted: rgba(255,255,255,0.75);
-      --card-bg: rgba(255,255,255,0.03);
-    }
-    /* Reset & base */
-    *{box-sizing:border-box}
-    html,body{height:100%;margin:0;font-family:'Inter',system-ui,-apple-system,Segoe UI,Roboto,'Helvetica Neue',Arial;color:#e9eef8;background:linear-gradient(135deg,var(--bg1),var(--bg2) 45%,var(--bg3));-webkit-font-smoothing:antialiased;}
-    a{color:#a78bfa}
-    .container{max-width:1100px;margin:0 auto;padding:80px 20px 80px}
-
-    /* NAV */
-    nav{position:fixed;left:0;right:0;top:14px;margin:0 auto;max-width:1100px;padding:10px 18px;background:linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));border-radius:14px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(8px);box-shadow:0 6px 30px rgba(12,8,35,0.4);z-index:60}
-    nav .brand{display:flex;gap:12px;align-items:center}
-    .logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#7c3aed,#5b21b6);display:flex;align-items:center;justify-content:center;font-weight:800;color:white}
-    nav .links a{margin-left:16px;font-weight:600;color:rgba(255,255,255,0.92);text-decoration:none}
-
-    /* PARTICLES canvas */
-    #particle-canvas{position:fixed;inset:0;z-index:-1;opacity:0.9}
-
-    /* Hero */
-    .hero{display:flex;gap:32px;align-items:center;flex-wrap:wrap;margin-top:20px}
-    .profile{display:flex;flex-direction:column;gap:12px;flex:1;min-width:260px}
-    .profile .avatar{width:200px;height:200px;border-radius:18px;background-image:url('https://i.imgur.com/4Z1ZQhF.png');background-size:cover;background-position:center;border:4px solid rgba(255,255,255,0.06);box-shadow:0 20px 50px rgba(0,0,0,0.6)}
-    .hero h1{font-size:36px;margin:0}
-    .hero h1 span{background:linear-gradient(90deg,#c084fc,#7c3aed);-webkit-background-clip:text;background-clip:text;color:transparent}
-    .hero p.lead{margin:8px 0;color:var(--muted);line-height:1.45}
-
-    /* Cards & sections */
-    .card{background:var(--card-bg);padding:22px;border-radius:14px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 8px 30px rgba(2,2,4,0.5);margin-bottom:18px}
-    .icon-title{display:flex;align-items:center;gap:12px;margin-bottom:12px}
-    .icon-title i{font-size:20px;color:#ffd6f7}
-    h2.section-heading{margin:0;font-size:20px;display:flex;align-items:center;gap:12px}
-
-    /* Skills */
-    .skill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .chip{background:linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,0.03);font-weight:700}
-
-    /* Skill bars */
-    .skillbar{margin-top:12px}
-    .skillbar .label{display:flex;justify-content:space-between;font-weight:700}
-    .bar{height:12px;background:rgba(255,255,255,0.04);border-radius:999px;margin-top:6px;overflow:hidden}
-    .bar .fill{height:100%;width:0;background:linear-gradient(90deg,#c084fc,#7c3aed);transition:width 1.8s cubic-bezier(.2,.9,.3,1)}
-
-    /* Timeline */
-    .timeline{position:relative;padding-left:18px;border-left:3px solid rgba(255,255,255,0.06)}
-    .timeline .item{position:relative;padding:12px 0 12px 18px}
-    .timeline .item::before{content:'';width:14px;height:14px;border-radius:50%;background:linear-gradient(90deg,#c084fc,#7c3aed);position:absolute;left:-27px;top:14px;box-shadow:0 6px 20px rgba(124,58,237,0.22)}
-
-    /* Projects grid */
-    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
-    .project-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03);transition:transform .25s ease,box-shadow .25s ease}
-    .project-card:hover{transform:translateY(-8px);box-shadow:0 30px 70px rgba(11,7,40,0.6)}
-
-    /* Footer */
-    footer{text-align:center;margin-top:30px;padding:20px;color:rgba(255,255,255,0.7)}
-
-    /* Responsive */
-    @media(max-width:900px){
-      .projects{grid-template-columns:1fr}
-      .hero{flex-direction:column;align-items:flex-start}
-      nav{padding:10px}
-    }
-
-    /* micro-interactions */
-    .cta{display:inline-flex;align-items:center;gap:10px;padding:10px 14px;background:linear-gradient(90deg,#7c3aed,#5b21b6);border-radius:10px;color:white;font-weight:700;text-decoration:none}
-    .muted{color:rgba(255,255,255,0.75)}
-  </style>
+  <!-- Main styles -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <!-- Particle canvas (JS will draw) -->
-  <canvas id="particle-canvas"></canvas>
+  <!-- Particle canvas -->
+  <canvas id="particle-canvas" aria-hidden="true"></canvas>
 
   <!-- NAV -->
-  <nav>
-    <div class="brand">
+  <nav class="nav">
+    <div class="nav-left">
       <div class="logo">AG</div>
-      <div style="line-height:1">
-        <div style="font-weight:800">Anjana G</div>
-        <div style="font-size:12px;color:rgba(255,255,255,0.75)">M.Tech CSE • ML • Data Analytics</div>
+      <div class="brand-text">
+        <div class="name">Anjana G</div>
+        <div class="sub">M.Tech CSE • ML • Data Analytics</div>
       </div>
     </div>
-    <div class="links">
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#education">Education</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
+    <div class="nav-right">
+      <a href="#hero" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#education" class="nav-link">Education</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
     </div>
   </nav>
 
-  <main class="container" id="page">
+  <main class="container">
 
-    <!-- HERO / HEADER -->
-    <section id="about" class="hero">
-      <div class="profile">
-        <div class="avatar" aria-hidden="true"></div>
-        <div class="card">
-          <div class="icon-title"><i class="ri-mail-line"></i><div style="font-weight:800">Contact Me</div></div>
-          <p class="muted">Email: <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a> • LinkedIn: <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
-          <p style="margin-top:10px;font-weight:700">Location</p>
-          <p class="muted">Thrissur, Kerala, India</p>
-          <p style="margin-top:8px;font-weight:700">Languages</p>
-          <p class="muted">Malayalam (Native) • English (Professional)</p>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-left">
+        <div class="avatar" id="avatar" aria-hidden="true"></div>
+        <div class="card contact-card">
+          <div class="sec-title"><i class="ri-mail-line"></i><span>Contact Me</span></div>
+          <p class="muted">Email: <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a></p>
+          <p class="muted">LinkedIn: <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
+          <div class="meta-row">
+            <div><strong>Location</strong><div class="muted">Thrissur, Kerala, India</div></div>
+            <div><strong>Languages</strong><div class="muted">Malayalam (Native), English (Professional)</div></div>
+          </div>
         </div>
       </div>
 
-      <div style="flex:1">
-        <h1>Hi, I'm <span>Anjana G</span></h1>
+      <div class="hero-right">
+        <h1>Hi, I'm <span class="accent">Anjana G</span></h1>
         <p class="lead muted">M.Tech CSE Student at NSSCE | Passionate About Machine Learning, Data Analytics & Web Development | Python Enthusiast</p>
 
-        <!-- Lottie animation -->
-        <div id="lottie-hero" style="width:300px;height:300px;margin-top:12px"></div>
+        <div id="lottie-hero" class="lottie-hero" aria-hidden="true"></div>
 
-        <p style="margin-top:14px">I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions.</p>
+        <!-- about excerpt -->
+        <div class="card">
+          <p>I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions.</p>
+          <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with core algorithms and complex problem-solving tasks.</p>
+          <p class="muted">Beyond technical skills, I bring strong communication abilities, collaborative teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation.</p>
 
-        <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with core algorithms and complex problem-solving tasks. I'm particularly motivated to deepen my knowledge in low-level programming and contribute meaningfully to system-level software development.</p>
-
-        <p>Beyond technical skills, I bring strong communication abilities, collaborative teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation. I'm actively seeking opportunities to apply my skills in challenging environments where I can continue learning and growing as a developer.</p>
-
-        <div style="margin-top:18px">
-          <a class="cta" href="mailto:ganjana369@gmail.com"><i class="ri-mail-open-fill"></i> Email Me</a>
-          <a class="muted" href="Anjana-G.pdf" download style="margin-left:14px">Download Resume</a>
+          <div class="hero-ctas">
+            <a class="cta" href="mailto:ganjana369@gmail.com"><i class="ri-mail-open-fill"></i> Email Me</a>
+            <a class="muted" id="open-resume" href="Anjana-G.pdf" download style="margin-left:12px">Download Resume</a>
+            <button class="cta ghost" id="open-full-about" style="margin-left:12px"><i class="ri-file-list-3-line"></i> Read Full</button>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- SKILLS / COMPETENCIES -->
-    <section id="skills" class="card" style="margin-top:18px">
-      <div class="icon-title"><i class="ri-stack-line"></i><h2 class="section-heading">Core Competencies & Skills</h2></div>
+    <!-- SKILLS -->
+    <section id="skills" class="card section">
+      <div class="sec-title"><i class="ri-stack-line"></i><h2>Core Competencies & Skills</h2></div>
 
-      <h3 style="margin-top:10px">Data Analysis</h3>
+      <h3>Data Analysis</h3>
       <p class="muted">Expert in analyzing complex datasets, extracting meaningful insights, and turning data into actionable decisions using Python and visualization tools.</p>
 
-      <h3 style="margin-top:12px">Tableau</h3>
+      <h3>Tableau</h3>
       <p class="muted">Proficient in creating interactive dashboards and compelling data visualizations that communicate insights effectively to stakeholders.</p>
 
-      <h3 style="margin-top:12px">Natural Language Processing</h3>
+      <h3>Natural Language Processing</h3>
       <p class="muted">Experienced in NLP techniques and building intelligent chatbots that understand and respond to human language naturally.</p>
 
-      <div style="margin-top:14px">
-        <div class="icon-title"><i class="ri-code-line"></i><div style="font-weight:800">Technical Expertise</div></div>
-        <div class="skill-row">
-          <div class="chip">C++</div>
-          <div class="chip">Python</div>
-          <div class="chip">Java</div>
-          <div class="chip">SQL / MySQL</div>
-        </div>
+      <div class="chips">
+        <span class="chip">C++</span>
+        <span class="chip">Python</span>
+        <span class="chip">Java</span>
+        <span class="chip">SQL / MySQL</span>
+        <span class="chip">Problem Solving</span>
+        <span class="chip">Communication</span>
+        <span class="chip">Team Collaboration</span>
+        <span class="chip">Project Management</span>
       </div>
 
-      <div style="margin-top:14px">
-        <div class="icon-title"><i class="ri-hand-heart-line"></i><div style="font-weight:800">Soft Skills</div></div>
-        <div class="skill-row">
-          <div class="chip">Problem Solving</div>
-          <div class="chip">Communication</div>
-          <div class="chip">Team Collaboration</div>
-          <div class="chip">Project Management</div>
-        </div>
-      </div>
-
-      <!-- Skill bars (interactive) -->
-      <div style="margin-top:18px">
+      <!-- skill bars -->
+      <div class="skillbars">
         <div class="skillbar"><div class="label"><span>Python</span><span>95%</span></div><div class="bar"><div class="fill" data-fill="95%"></div></div></div>
         <div class="skillbar"><div class="label"><span>C++</span><span>90%</span></div><div class="bar"><div class="fill" data-fill="90%"></div></div></div>
         <div class="skillbar"><div class="label"><span>SQL</span><span>85%</span></div><div class="bar"><div class="fill" data-fill="85%"></div></div></div>
@@ -189,199 +109,179 @@
       </div>
     </section>
 
-    <!-- EDUCATION -->
-    <section id="education" class="card">
-      <div class="icon-title"><i class="ri-book-open-line"></i><h2 class="section-heading">Education Journey</h2></div>
-      <div class="timeline" style="margin-top:12px">
-        <div class="item">
-          <h3>Master of Technology - MTech</h3>
-          <p class="muted">NSS College of Engineering, Palakkad — Computer Science and Engineering — September 2024 - March 2026</p>
-        </div>
-        <div class="item">
-          <h3>Bachelor of Technology - BTech</h3>
-          <p class="muted">Jawaharlal College of Engineering & Technology, Mangalam — Computer Science — 2020 - 2024</p>
-        </div>
-        <div class="item">
-          <h3>Plus Two</h3>
-          <p class="muted">Little Flower Girls Higher Secondary School Chelakkara — Computer Science — March 2020</p>
-        </div>
-        <div class="item">
-          <h3>ICSE Tenth</h3>
-          <p class="muted">Seventh Day Adventist Higher Secondary School — 2018</p>
-        </div>
+    <!-- EDUCATION (modal triggers for long content) -->
+    <section id="education" class="card section">
+      <div class="sec-title"><i class="ri-book-open-line"></i><h2>Education Journey</h2></div>
+      <div class="timeline">
+        <div class="item"><h3>Master of Technology - MTech</h3><p class="muted">NSS College of Engineering, Palakkad — Computer Science and Engineering — September 2024 - March 2026</p></div>
+        <div class="item"><h3>Bachelor of Technology - BTech</h3><p class="muted">Jawaharlal College of Engineering & Technology, Mangalam — Computer Science — 2020 - 2024</p></div>
+        <div class="item"><h3>Plus Two</h3><p class="muted">Little Flower Girls Higher Secondary School Chelakkara — Computer Science — March 2020</p></div>
+        <div class="item"><h3>ICSE Tenth</h3><p class="muted">Seventh Day Adventist Higher Secondary School — 2018</p></div>
       </div>
+      <div style="margin-top:12px"><button class="cta ghost" data-modal="modal-education">View Details</button></div>
     </section>
 
     <!-- EXPERIENCE -->
-    <section id="experience" class="card">
-      <div class="icon-title"><i class="ri-briefcase-line"></i><h2 class="section-heading">Professional Experience</h2></div>
+    <section id="experience" class="card section">
+      <div class="sec-title"><i class="ri-briefcase-line"></i><h2>Professional Experience</h2></div>
 
-      <div style="margin-top:12px">
+      <div class="exp-item">
         <h3>AI / ML Intern</h3>
         <p class="muted"><strong>Core Cognitics | Kozhikode, Kerala, India</strong> — May 2025 - July 2025 (3 months)</p>
         <p>Built an AI chatbot using Python and SQL for managing store sales queries and analytics. Utilized MySQL for database management and implemented data visualization tools to generate actionable insights for decision-making. Developed natural language processing capabilities to enhance user interaction and query understanding.</p>
       </div>
 
-      <div style="margin-top:14px">
+      <div class="exp-item">
         <h3>App Developer Intern</h3>
         <p class="muted"><strong>Torc Infotech | Kochi, Kerala</strong> — May 2023 - June 2023 (2 months)</p>
         <p>Gained hands-on experience in mobile application development, working with cross-functional teams to design and implement user-friendly interfaces. Contributed to the development lifecycle from concept to deployment, learning industry best practices and agile methodologies.</p>
       </div>
+
+      <div style="margin-top:12px"><button class="cta ghost" data-modal="modal-experience">Read More</button></div>
     </section>
 
     <!-- PROJECTS -->
-    <section id="projects" class="card">
-      <div class="icon-title"><i class="ri-projector-2-line"></i><h2 class="section-heading">Featured Projects</h2></div>
+    <section id="projects" class="card section">
+      <div class="sec-title"><i class="ri-projector-2-line"></i><h2>Featured Projects</h2></div>
 
-      <div class="projects" style="margin-top:12px">
+      <div class="projects-grid">
         <div class="project-card">
           <h3>WebSocket Real-Time Chat Application</h3>
           <p class="muted">Developed a sophisticated multi-user chat system using Python and WebSockets to enable seamless real-time client-server communication. Designed and implemented an intuitive frontend interface using HTML, CSS, and JavaScript, ensuring responsive design and excellent user experience across devices.</p>
+          <button class="cta ghost" data-modal="modal-projects">Details</button>
         </div>
 
         <div class="project-card">
           <h3>Linux Kernel Process Scheduler Visualizer</h3>
           <p class="muted">Created an advanced scheduler simulator implementing Round Robin and Completely Fair Scheduler algorithms using Python. Developed interactive visualizations using matplotlib and pandas to analyze CPU scheduling behavior, providing deep insights into process management and system performance optimization.</p>
+          <button class="cta ghost" data-modal="modal-projects">Details</button>
         </div>
       </div>
-
-      <p style="margin-top:14px" class="muted">These projects demonstrate an ability to bridge theoretical computer science concepts with practical, real-world applications.</p>
     </section>
 
-    <!-- CERTIFICATIONS -->
-    <section id="certifications" class="card">
-      <div class="icon-title"><i class="ri-award-line"></i><h2 class="section-heading">Certifications & Professional Development</h2></div>
-
-      <ul style="margin-top:12px">
+    <!-- CERTIFICATIONS + WORKSHOPS -->
+    <section id="certifications" class="card section">
+      <div class="sec-title"><i class="ri-award-line"></i><h2>Certifications & Professional Development</h2></div>
+      <ul class="muted">
         <li>Foundation of Cloud IoT Edge ML — NPTEL IIT Kanpur</li>
         <li>Data Fundamentals</li>
         <li>Deloitte Australia - Data Analytics Job Simulation</li>
         <li>Data Analytics: Turning Data into Decisions — IBM</li>
       </ul>
 
-      <h3 style="margin-top:12px">Workshops Attended</h3>
-      <ul>
+      <h3>Workshops Attended</h3>
+      <ul class="muted">
         <li>Hands-on Workshop on Power BI — NSSCE, Palakkad</li>
         <li>Python and Computer Vision Bootcamp — DevTown</li>
         <li>Process of Writing Quality Research Paper — NSSCE, Palakkad</li>
       </ul>
 
-      <h3 style="margin-top:12px">Competitions</h3>
-      <ul>
+      <h3>Competitions</h3>
+      <ul class="muted">
         <li>Tata Crucible Campus Quiz 2025</li>
       </ul>
     </section>
 
     <!-- RESEARCH -->
-    <section id="research" class="card">
-      <div class="icon-title"><i class="ri-git-branch-line"></i><h2 class="section-heading">Research & Publications</h2></div>
-
-      <h3 style="margin-top:12px">Enhancing Driver Safety: Deep Learning Approach for Drowsiness Detection and Accident Prevention</h3>
+    <section id="research" class="card section">
+      <div class="sec-title"><i class="ri-git-branch-line"></i><h2>Research & Publications</h2></div>
+      <h3>Enhancing Driver Safety: Deep Learning Approach for Drowsiness Detection and Accident Prevention</h3>
       <p class="muted">This research explores the application of deep learning techniques to detect driver drowsiness in real-time, potentially preventing accidents and saving lives. The study combines computer vision, machine learning algorithms, and practical implementation strategies to create an effective safety system.</p>
 
       <p class="muted">The research addresses a critical public safety concern by developing intelligent systems that can monitor driver alertness and provide timely warnings. By leveraging advanced neural networks and image processing techniques, the system achieves high accuracy in detecting signs of drowsiness such as eye closure patterns, head position, and facial expressions.</p>
-
-      <p class="muted">This publication demonstrates commitment to applying cutting-edge technology to solve real-world problems that have significant social impact.</p>
     </section>
 
-    <!-- EVENTS / COMMUNITY -->
-    <section id="events" class="card">
-      <div class="icon-title"><i class="ri-calendar-line"></i><h2 class="section-heading">Webinars, Events & Community Engagement</h2></div>
+    <!-- EVENTS -->
+    <section id="events" class="card section">
+      <div class="sec-title"><i class="ri-calendar-line"></i><h2>Webinars, Events & Community Engagement</h2></div>
 
-      <div style="margin-top:12px">
+      <div class="muted">
         <h3>Python and Computer Vision Bootcamp — DevTown</h3>
-        <p class="muted">Intensive training program covering advanced Python programming techniques and computer vision applications using OpenCV and deep learning frameworks.</p>
-      </div>
+        <p>Intensive training program covering advanced Python programming techniques and computer vision applications using OpenCV and deep learning frameworks.</p>
 
-      <div style="margin-top:12px">
         <h3>Process of Writing Quality Research Paper — NSSCE</h3>
-        <p class="muted">Comprehensive seminar on academic writing, research methodology, and publication strategies for technical papers.</p>
-      </div>
+        <p>Comprehensive seminar on academic writing, research methodology, and publication strategies for technical papers.</p>
 
-      <div style="margin-top:12px">
         <h3>NSS Volunteer Activities</h3>
-        <p class="muted">Actively participated in National Service Scheme community service programs, demonstrating teamwork, leadership, and social commitment.</p>
+        <p>Active participation in NSS programs, community service, and outreach, demonstrating strong teamwork, leadership, and social commitment.</p>
       </div>
-
-      <p style="margin-top:12px" class="muted">Community Impact: Beyond technical skills, I believe in giving back through volunteer work and knowledge sharing.</p>
     </section>
 
     <!-- CONTACT -->
-    <section id="contact" class="card">
-      <div class="icon-title"><i class="ri-contacts-line"></i><h2 class="section-heading">Let's Connect</h2></div>
+    <section id="contact" class="card section">
+      <div class="sec-title"><i class="ri-contacts-line"></i><h2>Let's Connect</h2></div>
       <p class="muted">Ready to collaborate — actively seeking opportunities to apply skills in machine learning, data analytics, and systems programming.</p>
       <p><strong>Email:</strong> <a href="mailto:ganjana369@gmail.com">ganjana369@gmail.com</a></p>
       <p><strong>LinkedIn:</strong> <a href="http://www.linkedin.com/in/anjana-g-1048551b8" target="_blank">anjana-g-1048551b8</a></p>
     </section>
 
-    <footer>
-      © 2025 Anjana G — Portfolio Website • Built from original PDF content
-    </footer>
-
+    <footer class="footer muted">© 2025 Anjana G — Portfolio Website • Built from original PDF content</footer>
   </main>
 
-  <!-- Scripts: particles, Lottie, small interactions -->
-  <script>
-    /* ---------- PARTICLES ---------- */
-    (function(){
-      const canvas = document.getElementById('particle-canvas');
-      const ctx = canvas.getContext('2d');
-      let w, h, particles = [], maxParticles = 80;
-      function resize(){ w = canvas.width = innerWidth; h = canvas.height = innerHeight; }
-      window.addEventListener('resize', resize);
-      resize();
-      function rand(min,max){ return Math.random()*(max-min)+min; }
-      class P{ constructor(){ this.reset(); }
-        reset(){ this.x = rand(0,w); this.y = rand(0,h); this.vx = rand(-0.3,0.3); this.vy = rand(-0.2,0.2); this.r = rand(1.5,3.8); this.alpha = rand(0.06,0.22); }
-        step(){ this.x += this.vx; this.y += this.vy; if(this.x< -20 || this.x>w+20 || this.y<-20 || this.y>h+20) this.reset(); }
-        draw(){ ctx.beginPath(); ctx.fillStyle = "rgba(200,160,255,"+this.alpha+")"; ctx.arc(this.x,this.y,this.r,0,Math.PI*2); ctx.fill();}
-      }
-      for(let i=0;i<maxParticles;i++) particles.push(new P());
-      function loop(){
-        ctx.clearRect(0,0,w,h);
-        // subtle gradient glow
-        const g = ctx.createLinearGradient(0,0,w,h);
-        g.addColorStop(0,'rgba(22,10,70,0.08)');
-        g.addColorStop(1,'rgba(6,8,23,0.08)');
-        ctx.fillStyle = g; ctx.fillRect(0,0,w,h);
-        particles.forEach(p=>{ p.step(); p.draw(); });
-        requestAnimationFrame(loop);
-      }
-      loop();
-    })();
+  <!-- MODALS (HYBRID) -->
+  <div id="modal-root">
+    <div id="modal-full-about" class="modal">
+      <div class="modal-card">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>About — Full</h2>
+        <div class="modal-body">
+          <!-- Full PDF content for About (all paragraphs) -->
+          <p>I'm a final-year M.Tech Computer Science and Engineering student with a strong passion for systems programming, C/C++, Data Structures, and Operating Systems. My journey in technology has been driven by curiosity and a desire to build efficient, real-world solutions that make a difference.</p>
+          <p>I have hands-on experience developing OS-based simulations such as CPU scheduling visualizers and building real-time applications using Python. My expertise extends to writing clean, efficient code while working comfortably with core algorithms and complex problem-solving tasks. I'm particularly motivated to deepen my knowledge in low-level programming and contribute meaningfully to system-level software development.</p>
+          <p>Beyond technical skills, I bring strong communication abilities, collaborative teamwork experience, and a proven track record of delivering projects that combine theoretical knowledge with practical implementation. I'm actively seeking opportunities to apply my skills in challenging environments where I can continue learning and growing as a developer.</p>
+          <p><strong>Location:</strong> Thrissur, Kerala, India</p>
+          <p><strong>Languages:</strong> Malayalam (Native), English (Professional)</p>
+        </div>
+      </div>
+    </div>
 
-    /* ---------- LOTTIE HERO ---------- */
-    lottie.loadAnimation({
-      container: document.getElementById('lottie-hero'),
-      renderer: 'svg',
-      loop: true,
-      autoplay: true,
-      path: 'https://assets9.lottiefiles.com/packages/lf20_qp1q7mct.json' // general tech illustration
-    });
+    <div id="modal-education" class="modal">
+      <div class="modal-card">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>Education — Details</h2>
+        <div class="modal-body">
+          <ul>
+            <li><strong>Master of Technology - MTech</strong> — NSS College of Engineering, Palakkad — Computer Science and Engineering — September 2024 - March 2026</li>
+            <li><strong>Bachelor of Technology - BTech</strong> — Jawaharlal College of Engineering & Technology, Mangalam — Computer Science — 2020 - 2024</li>
+            <li><strong>Plus Two</strong> — Little Flower Girls Higher Secondary School Chelakkara — Computer Science — March 2020</li>
+            <li><strong>ICSE Tenth</strong> — Seventh Day Adventist Higher Secondary School — 2018</li>
+          </ul>
+        </div>
+      </div>
+    </div>
 
-    /* ---------- SKILL BAR ANIMATION ---------- */
-    document.addEventListener('DOMContentLoaded', ()=> {
-      const fills = document.querySelectorAll('.bar .fill');
-      fills.forEach(f => {
-        const to = f.getAttribute('data-fill') || '80%';
-        setTimeout(()=> f.style.width = to, 500);
-      });
+    <div id="modal-experience" class="modal">
+      <div class="modal-card">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>Experience — Details</h2>
+        <div class="modal-body">
+          <h3>AI / ML Intern — Core Cognitics</h3>
+          <p><strong>May 2025 - July 2025 • Kozhikode, Kerala</strong></p>
+          <p>Built an AI chatbot using Python and SQL for managing store sales queries and analytics. Utilized MySQL for database management and implemented data visualization tools to generate actionable insights for decision-making. Developed natural language processing capabilities to enhance user interaction and query understanding.</p>
 
-      // smooth scroll for nav links
-      document.querySelectorAll('nav .links a').forEach(a=>{
-        a.addEventListener('click', e=>{
-          e.preventDefault();
-          const id = a.getAttribute('href');
-          document.querySelector(id).scrollIntoView({behavior:'smooth', block:'start'});
-        });
-      });
-    });
+          <h3>App Developer Intern — Torc Infotech</h3>
+          <p><strong>May 2023 - June 2023 • Kochi, Kerala</strong></p>
+          <p>Gained hands-on experience in mobile application development, working with cross-functional teams to design and implement user-friendly interfaces. Contributed to the development lifecycle from concept to deployment, learning industry best practices and agile methodologies.</p>
+        </div>
+      </div>
+    </div>
 
-    /* ---------- OPTIONAL: Show "Download Resume" file if not found, fallback ---------- */
-    (function(){
-      // nothing; resume is expected to be present at root as Anjana-G.pdf
-    })();
-  </script>
+    <div id="modal-projects" class="modal">
+      <div class="modal-card">
+        <button class="modal-close" data-close>&times;</button>
+        <h2>Projects — Details</h2>
+        <div class="modal-body">
+          <h3>WebSocket Real-Time Chat Application</h3>
+          <p>Developed a sophisticated multi-user chat system using Python and WebSockets to enable seamless real-time client-server communication. Designed and implemented an intuitive frontend interface using HTML, CSS, and JavaScript, ensuring responsive design and excellent user experience across devices.</p>
 
+          <h3>Linux Kernel Process Scheduler Visualizer</h3>
+          <p>Created an advanced scheduler simulator implementing Round Robin and Completely Fair Scheduler algorithms using Python. Developed interactive visualizations using matplotlib and pandas to analyze CPU scheduling behavior, providing deep insights into process management and system performance optimization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
